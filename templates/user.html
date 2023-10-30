@@ -66,7 +66,7 @@
                                 </td>
                                 <td>{{ i.name }}</td>
                                 <td>
-                                    <button class="edit-button"><a href="" target="_blank">Edit</a></button>
+                                    <button class="edit-button"><a href="{% url 'edit_data' i.id %}" target="_blank">Edit</a></button>
                                     <button class="delete-button"><a href="">Delete</a></button>
                                 </td>
                             </tr>

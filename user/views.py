@@ -16,7 +16,11 @@ def user_index(request):
     return render(request, 'admin.html')
 
 def user_panel(request):
-    return render(request, 'user.html')
+    user_data = UserData.objects.all()
+    data = {
+        "user_data": user_data
+    }
+    return render(request, 'user.html', data)
 
 def user_data(request):
     return render(request, 'navbarinput.html')
@@ -60,7 +64,6 @@ def update_data(request):
     user_obj = get_object_or_404(UserData, id=id)
     
     if 'photo' in request.FILES:
-        # If a new image is provided, delete the old one if it exists
         if user_obj.photo:
             os.remove(user_obj.photo.path)
         user_obj.photo = request.FILES['photo']
@@ -85,20 +88,20 @@ def insert_about(request):
        
        if fname:
         # Create User Data Object.
-          about_obj = AboutData()
-          about_obj.fname = fname
-          about_obj.address = address
-          about_obj.email = email
-          about_obj.objective = objective
-          about_obj.linkin = linkin
-          about_obj.github = github
-          about_obj.twitter = twitter
-          about_obj.facebook = facebook
-          about_obj.save()
-          messages.success(request,"Data has been Successfully Submitted.")
-          return redirect('user_user') 
+            about_obj = AboutData()
+            about_obj.fname = fname
+            about_obj.address = address
+            about_obj.email = email
+            about_obj.objective = objective
+            about_obj.linkin = linkin
+            about_obj.github = github
+            about_obj.twitter = twitter
+            about_obj.facebook = facebook
+            about_obj.save()
+            messages.success(request,"Data has been Successfully Submitted.")
+            return redirect('user_user') 
        else:
-             return HttpResponse('Empty Fields not be acceptted')
+            return HttpResponse('Empty Fields not be acceptted')
    else:
         return render(request, 'user.html')
        
@@ -170,7 +173,7 @@ def insert_experience(request):
         sdate = request.POST.get('sdate')  
         edate = request.POST.get('edate') 
 
-        if position:
+        if company:
             experience_obj = ExperienceData()
             experience_obj.position = position
             experience_obj.company = company
