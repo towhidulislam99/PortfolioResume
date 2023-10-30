@@ -45,6 +45,7 @@ def insert_data(request):
 def output_data(request):
     profile_data = UserData.objects.all()
     data = {"user_data": profile_data}
+    print(data)
     return render(request,'index.html', data)
 
 def edit_data(request, id):
