@@ -24,13 +24,5 @@ from . import views as v
 urlpatterns = [
     # path('admin/', admin.site.urls),
      path('index/', v.portfolio_index, name='portfolio_index'),
-     
-    #  path('Profile/', v.output_profile, name='output_profile'),
-    #  path('about/', v.output_about, name='output_about'),
-    #  path('experience/', v.output_experience, name='output_experience'),
-    #  path('education/', v.output_education, name='output_education'),
-    #  path('skills/', v.output_skills, name='output_skills'),
-    #  path('interest/', v.output_interest, name='output_interest'),
-    #  path('awards/', v.output_awards, name='output_awards'),
     
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

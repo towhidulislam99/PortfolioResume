@@ -49,5 +49,4 @@ class InterestData(models.Model):
     
 class AwardsData(models.Model): 
     awards = models.CharField(max_length=500)
-    
-    
+      

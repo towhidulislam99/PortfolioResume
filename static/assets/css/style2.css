@@ -9,12 +9,13 @@ body {
 }
 
 .card {
-    width:980px;
+    width:100%;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 20px auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-left: 300px;
+    display: flex;
 }
 
 .card-header {
@@ -58,12 +59,12 @@ input[type="text"], input[type="email"], input[type="submit"] {
     box-sizing: border-box;
 }
 input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: rgb(10, 132, 233);
     color: white;
     cursor: pointer;
 }
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: green;
 }
 
 textarea {
@@ -79,20 +80,23 @@ textarea {
 /* Table Style CSS StartHere */
 
 .styled-table {
-    width: 100%;
+    width:100%;
     border-collapse: collapse;
+    
 }
 
 .styled-table th, .styled-table td {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
-    
+    padding: 8px;   
+}
+
+.styled-table tbody{
+    text-align: left;
 }
 
 .styled-table th {
-    background-color: #f2f2f2;
-   
+    background-color: #f2f2f2;   
 }
 
 /* Adjust colors and styles for hover effect */
@@ -133,3 +137,50 @@ textarea {
     text-decoration: none;
 }
 /* Table Style CSS End Here */
+
+/* Admin Panel Style Button CSS Start Here */
+/* CSS */
+.pannel .card{
+    display: block; 
+    margin-left:0px;
+}
+.admin{
+    width: 600px;
+    height:400px ;
+    padding: 10px 100px;
+    background-color: rebeccapurple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    list-style: none;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.admin li  {
+    text-align: center;
+    padding: 0;
+    margin: 100px;
+  }
+
+  .admin li a{
+    display: inline;
+    border-radius: 10px;
+    padding: 20px 40px;
+    background-color: #9B59B6;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;  
+    margin: 0 10px;
+  }
+  
+  /* Hover effect */
+  .admin li a:hover {
+    background-color: #2ECC71;
+  }
+/* Admin Panel Style Button CSS Start Here */

@@ -24,6 +24,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'portfolio_index' %}">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_user' %}">User</a>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_data' %}">Profile Data</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_about' %}">About</a></li>
@@ -32,10 +33,10 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_skills' %}">Skills</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_interest' %}">Interests</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_awards' %}">Awards</a></li>
+                        <button class="button"  style="background-color:#9B59B6;border:none; color:#fff"><li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_user' %}">BACK USER PANNEL</a></li></button>
+                        <button class="button"  style="background-color:#2ECC71;border:none; color:#fff"><li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_index' %}">BACK PANNEL</a></li></button>
                     
                     </li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Portfolio</a></li>
-                    
                 </ul>
             </div>
         </nav>
@@ -61,9 +62,7 @@
 
                         <input type="submit" class="" value="Submit" name="">
                     </form>
-                </div>
-                
-                
+                </div>      
             </div>
         </div>
  <!-- Card Html Code Started-->
