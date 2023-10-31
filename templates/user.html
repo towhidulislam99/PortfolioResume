@@ -56,9 +56,8 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
+                        {% for i in user_data %}
                         <tbody>
-                            {% for i in user_data %}
-                          
                             <tr>
                                 <td>{{ forloop.counter }}</td>
                                 <td>
@@ -70,7 +69,7 @@
                                     <button class="delete-button"><a href="{% url 'delete_data' i.id %}">Delete</a></button>
                                 </td>
                             </tr>
-                            {% endfor %}
+                        {% endfor %}
                         </tbody>
                     </table>
             </div>
@@ -102,10 +101,9 @@
                         
                     </tr>
                 </thead>
+                {% for i in about_data %}
                 <tbody>
                 </tr>
-                    {% for i in about_data %}
-                      
                         <td>{{forloop.counter}}</td>
                         <td>{{i.fname}}</td>
                         <td>{{i.address}}</td>
@@ -120,7 +118,7 @@
                             <button class="edit-button"  ><a href="{% url 'edit_about' i.id %}" target="_blank">Edit</a></button>
                             <button class="delete-button" ><a href="{% url 'delete_about' i.id %}">Delete</a></button>   
                         </td>
-                    {% endfor %}
+                {% endfor %}
                     </tr>
 
                 </tbody>
@@ -152,10 +150,9 @@
                         
                     </tr>
                 </thead>
+                {% for i in experience_data %}
                 <tbody>
-                </tr>
-                    {% for i in experience_data %}
-                      
+                </tr> 
                         <td>{{forloop.counter}}</td>
                         <td>{{i.position}}</td>
                         <td>{{i.company}}</td>
@@ -166,7 +163,7 @@
                             <button class="edit-button"  ><a href="{% url 'edit_experience' i.id %}" target="_blank">Edit</a></button>
                             <button class="delete-button" ><a href="{% url 'delete_experience' i.id %}">Delete</a></button>   
                         </td>
-                    {% endfor %}    
+                {% endfor %}    
                     </tr>
 
                 </tbody>
@@ -197,10 +194,9 @@
                         
                     </tr>
                 </thead>
+                {% for i in education_data %}
                 <tbody>
                 </tr>
-                    {% for i in education_data %}
-                      
                         <td>{{forloop.counter}}</td>
                         <td>{{i.university}}</td>
                         <td>{{i.degree}}</td>
@@ -211,7 +207,7 @@
                             <button class="edit-button"  ><a href="{% url 'edit_education' i.id %}" target="_blank">Edit</a></button>
                             <button class="delete-button" ><a href="{% url 'delete_education' i.id %}">Delete</a></button>   
                         </td>
-                    {% endfor %}    
+                {% endfor %}    
                     </tr>
 
                 </tbody>
@@ -244,10 +240,9 @@
                         
                     </tr>
                 </thead>
+                {% for i in skills_data %}
                 <tbody>
                 </tr>
-                    {% for i in skills_data %}
-                      
                         <td>{{forloop.counter}}</td>
                         <td>{{i.language}}</td>
                         <td>{{i.workflow}}</td>
@@ -260,7 +255,7 @@
                             <button class="edit-button"  ><a href="{% url 'edit_skills' i.id %}" target="_blank">Edit</a></button>
                             <button class="delete-button" ><a href="{% url 'delete_skills' i.id %}">Delete</a></button>   
                         </td>
-                    {% endfor %}    
+                {% endfor %}    
                     </tr>
 
                 </tbody>
@@ -288,10 +283,9 @@
                         
                     </tr>
                 </thead>
+                {% for i in interest_data %}
                 <tbody>
                 </tr>
-                    {% for i in interest_data %}
-                      
                         <td>{{forloop.counter}}</td>
                         <td>{{i.interest}}</td>
                         <td>{{i.othersinterest}}</td>
@@ -299,7 +293,7 @@
                             <button class="edit-button"  ><a href="{% url 'edit_interest' i.id %}" target="_blank">Edit</a></button>
                             <button class="delete-button" ><a href="{% url 'delete_interest' i.id %}">Delete</a></button>   
                         </td>
-                    {% endfor %}    
+                {% endfor %}    
                     </tr>
 
                 </tbody>
@@ -326,17 +320,16 @@
                         
                     </tr>
                 </thead>
+                {% for i in awards_data %}
                 <tbody>
                 </tr>
-                    {% for i in awards_data %}
-                      
                         <td>{{forloop.counter}}</td>
                         <td>{{i.awards}}</td>
                         <td>
                             <button class="edit-button"  ><a href="{% url 'edit_awards' i.id %}" target="_blank">Edit</a></button>
                             <button class="delete-button" ><a href="{% url 'delete_awards' i.id %}">Delete</a></button>   
                         </td>
-                    {% endfor %}    
+                {% endfor %}    
                     </tr>
 
                 </tbody>
