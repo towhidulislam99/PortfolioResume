@@ -15,7 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <!-- <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}"/> -->
-        <link rel="stylesheet" href="{% static 'assets/css/style2.css' %}"/>
+        <link rel="stylesheet" href="{% static 'assets/css/stylessignup.css' %}"/>
     </head>
     
 
@@ -24,19 +24,31 @@
 <div class="pannel">
 <div class="card">
     <div class="card-header">
-        <h2 style="text-align: center;">PORTFOLIO PANNEL</h2>
-        <p style="text-align: center;">All Information Provides This Pannel</p>
+        <h2 style="text-align: center;"> ADMIN LOGIN</h2>
+        <p style="text-align: center;">Please Login then Admin Pannel</p>
     </div>
     <div class="card-body">
+
+
+        <div class="signup-form">
+            <h2>Login</h2>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <label for="username">User Name</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+    
+                <label for="pass">Password</label>
+                <input type="password" id="pass" name="pass" placeholder="Enter your password" required>
+
+                <input type="submit" value="Login">
+            </form>
+            <p>or <a href="{% url 'signup' %}">Sign up</a></p>
+            <p><a href="">Forgot Password</a></p>
+        </div>
  
-           <div class="admin">
            
-            <li><a href="{% url 'portfolio_index' %}">PORTFOLIO</a></li>
-            <li><a href="{% url 'login' %}">ADMIN</a></li>
-         
         </div>
     </div>
-</div>
 </div>
 <!-- Card Html Code Started-->
 

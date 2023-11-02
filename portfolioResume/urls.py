@@ -21,10 +21,11 @@ from django.conf.urls.static import static
 from . import views as v
 
 
-
 urlpatterns = [
      path('admin/', admin.site.urls),
      path('superadmin/', include('user.urls')),
      path('user/', include('portfolio.urls')),
-    
+     path('adminsignup/',v.signup, name='signup'),
+     path('adminlogin/',v.login, name='login'), 
+     path('adminlogout/',v.LogoutPage, name='logout'),   
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

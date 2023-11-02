@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'portfolio',
+    'portfolioResume',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'portfolioResume.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+      'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfolio',
         'USER': 'postgres',
@@ -91,13 +92,14 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432'
     }
-    }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'db.db.sqlite3',
-    # }
     
-
+    }
+   
+   
+# 'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'db.db.sqlite3',
+#     }
 
 
 # Password validation

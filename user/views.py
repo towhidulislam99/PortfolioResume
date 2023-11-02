@@ -324,6 +324,8 @@ def insert_skills(request):
             skills_obj.wffour = wffour
             skills_obj.wffive = wffive
             skills_obj.save()
+            messages.success(request, "Data has been successfully submitted.")
+            return redirect('user_user')
         else:
             messages.error(request, "Failed to submit data: Invalid Data")
     else:
@@ -378,6 +380,8 @@ def insert_interest(request):
            interest_obj.interest = interest
            interest_obj.othersinterest = othersinterest
            interest_obj.save()
+           messages.success(request, "Data has been successfully submitted.")
+           return redirect('user_user')
        else:
            messages.error(request, "Failed to submit data: Invalid Data")
    else:
@@ -421,6 +425,8 @@ def insert_awards(request):
             awards_obj = AwardsData()
             awards_obj.awards = awards
             awards_obj.save()
+            messages.success(request, "Data has been successfully submitted.")
+            return redirect('user_user')
         else:
            messages.error(request, "Failed to submit data: Invalid Data")
     else:
