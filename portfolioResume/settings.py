@@ -84,22 +84,26 @@ WSGI_APPLICATION = 'portfolioResume.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-      'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-        'USER': 'postgres',
-        'PASSWORD': '46899',
-        'HOST': 'localhost',
-        'PORT': '5432'
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.db.sqlite3',
     }
-    
+      
     }
-   
-   
+
+
 # 'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'db.db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'portfolio',
+#         'USER': 'postgres',
+#         'PASSWORD': '46899',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
 #     }
+    
+   
+   
+
 
 
 # Password validation
