@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Resume - Salman Md Sultan</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}"/>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}"/>
+        <link rel="stylesheet" href="{% static 'assets/css/style2.css' %}"/>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_user' %}">User</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_data' %}">Profile Data</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_about' %}">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_experience' %}">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_education' %}">Education</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_skills' %}">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_interest' %}">Interests</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_awards' %}">Awards</a></li>
+                        <button class="button"  style="background-color:#055c3a;border:none; color:#fff;"><li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: #fff;" href="{% url 'user_user' %}">BACK ADMIN PANNEL</a></li></button> 
+                        <button class="button"  style="background-color:#ca0404;border:none; color:#fff;"><li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: #fff;" href="{% url 'user_index' %}">Logout Pannel</a></li></button>   
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+<!-- Card Html Code Started-->
+        <div class="card">
+            <div class="card-header">
+                <h2>Update Experience Data Template</h2>
+                <p>Provide the Information For your Experience Section</p>
+            </div>
+            <div class="card-body">
+               
+                <div class="container">
+                    <form action="{% url 'update_experience' %}" method="POST">
+                        {% csrf_token %}
+
+                        <input type="hidden" name="id" value="{{experience_data.id}}" id=""><br><br>
+
+                        <label for="position">Position</label>
+                        <input type="text" class="position" id="position" name="position"  value="{{experience_data.position}}" required>
+
+                        <label for="company">Company Name</label>
+                        <input type="text" class="company" id="company" name="company" value="{{experience_data.company}}" required>
+
+                        <label for="description">Description</label>
+                        <textarea type="textarea" id="description" name="description" class="description" rows="4" value="" required>{{experience_data.description}}</textarea>
+
+                        <label for="sdate">Starting Date</label>
+                        <input type="date" class="sdate" id="sdate" name="sdate" value="{{ experience_data.sdate | date:'Y-m-d' }}" required>
+                        <br>
+                        <br>
+
+                        <label for="edate">Ending Date</label>
+                        <input type="date" class="edate" id="edate" name="edate" value="{{ experience_data.edate | date:'Y-m-d' }}" required>
+                        <br>
+                        <br>
+
+                        <input type="submit" class="" value="Update Experience Data" name="">
+                    </form>
+                </div>   
+            </div>
+        </div>
+ <!-- Card Html Code Started-->
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'assets/js/scripts.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,345 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Resume - Salman Md Sultan</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}"/>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}"/>
+        <link rel="stylesheet" href="{% static 'assets/css/style2.css' %}"/>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <button class="button"  style="background-color:#C507FD;border:none; color:#fff;"><li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: #fff;" href="{% url 'user_user' %}">ADMIN PANNEL</a></li></button>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_data' %}">Profile Data</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_about' %}">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_experience' %}">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_education' %}">Education</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_skills' %}">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_interest' %}">Interests</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'user_awards' %}">Awards</a></li>
+                        <button class="button"  style="background-color:#055c3a;border:none; color:#fff;"><li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: #fff;" href="{% url 'user_user' %}">BACK ADMIN PANNEL</a></li></button> 
+                        <button class="button"  style="background-color:#ca0404;border:none; color:#fff;"><li class="nav-item"><a class="nav-link js-scroll-trigger" style="color: #fff;" href="{% url 'user_index' %}">Logout Pannel</a></li></button>   
+                    </li>     
+            </div>
+        </nav>
+
+        <!-- Card Html Code Started-->
+        <div class="card">
+            <div class="card-header">
+                <h2 style="text-align: center;">Profile Data</h2>
+                <p style="text-align: center;">All Information Provides This Pannel</p>
+            </div>
+            <div class="card-body">
+
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Sl No</th>
+                                <th>Photo</th>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        {% for i in user_data %}
+                        <tbody>
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>
+                                    <img src="/media/{{ i.photo }}" alt="no image" height="50px" width="50px">
+                                </td>
+                                <td>{{ i.name }}</td>
+                                <td>
+                                    <button class="edit-button"><a href="{% url 'edit_data' i.id %}" target="_blank">Edit</a></button>
+                                    <button class="delete-button"><a href="{% url 'delete_data' i.id %}">Delete</a></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+ <!-- Card Html Code Started-->
+
+
+ <!-- Card Html Code Started-->
+ <div class="card">
+    <div class="card-header">
+        <h2 style="text-align: center;">About Data Table</h2>
+        <p style="text-align: center;">All Information Provides This Pannel</p>
+    </div>
+    <div class="card-body">
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Objective</th>
+                        <th>Linkedin Link</th>
+                        <th>Github Link</th>
+                        <th>Twitter Link</th>
+                        <th>Facebook Link</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                </thead>
+                {% for i in about_data %}
+                <tbody>
+                </tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.fname}}</td>
+                        <td>{{i.address}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.objective}}</td>
+                        <td>{{i.linkin}}</td>
+                        <td>{{i.github}}</td>
+                        <td>{{i.twitter}}</td>
+                        <td>{{i.facebook}}</td>
+                       
+                        <td>
+                            <button class="edit-button"  ><a href="{% url 'edit_about' i.id %}" target="_blank">Edit</a></button>
+                            <button class="delete-button" ><a href="{% url 'delete_about' i.id %}">Delete</a></button>   
+                        </td>
+                {% endfor %}
+                    </tr>
+
+                </tbody>
+            </table>
+    </div>
+</div>
+<!-- Card Html Code Started-->
+
+
+
+ <!-- Card Html Code Started-->
+ <div class="card">
+    <div class="card-header">
+        <h2 style="text-align: center;">Experience Data Table</h2>
+        <p style="text-align: center;">All Information Provides This Pannel</p>
+    </div>
+    <div class="card-body">
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Position</th>
+                        <th>Company</th>
+                        <th>Description</th>
+                        <th>sdate</th>
+                        <th>edate</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                </thead>
+                {% for i in experience_data %}
+                <tbody>
+                </tr> 
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.position}}</td>
+                        <td>{{i.company}}</td>
+                        <td>{{i.description}}</td>
+                        <td>{{i.sdate}}</td>
+                        <td>{{i.edate}}</td>
+                        <td>
+                            <button class="edit-button"  ><a href="{% url 'edit_experience' i.id %}" target="_blank">Edit</a></button>
+                            <button class="delete-button" ><a href="{% url 'delete_experience' i.id %}">Delete</a></button>   
+                        </td>
+                {% endfor %}    
+                    </tr>
+
+                </tbody>
+            </table>    
+    </div>
+</div>
+<!-- Card Html Code Started-->
+
+
+<!-- Card Html Code Started-->
+<div class="card">
+    <div class="card-header">
+        <h2 style="text-align: center;">Education Data Table</h2>
+        <p style="text-align: center;">All Information Provides This Pannel</p>
+    </div>
+    <div class="card-body">
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>University</th>
+                        <th>Degree</th>
+                        <th>Subject</th>
+                        <th>CGPA</th>
+                        <th>passing year</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                </thead>
+                {% for i in education_data %}
+                <tbody>
+                </tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.university}}</td>
+                        <td>{{i.degree}}</td>
+                        <td>{{i.subject}}</td>
+                        <td>{{i.cgpa}}</td>
+                        <td>{{i.pyear}}</td>
+                        <td>
+                            <button class="edit-button"  ><a href="{% url 'edit_education' i.id %}" target="_blank">Edit</a></button>
+                            <button class="delete-button" ><a href="{% url 'delete_education' i.id %}">Delete</a></button>   
+                        </td>
+                {% endfor %}    
+                    </tr>
+
+                </tbody>
+            </table>
+    </div>
+</div>
+<!-- Card Html Code Started-->
+
+
+<!-- Card Html Code Started-->
+<div class="card">
+    <div class="card-header">
+        <h2 style="text-align: center;">Skills Data Table</h2>
+        <p style="text-align: center;">All Information Provides This Pannel</p>
+    </div>
+    <div class="card-body">
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Language</th>
+                        <th>Workflow Heading</th>
+                        <th>Workflow One</th>
+                        <th>Workflow Two</th>
+                        <th>Workflow Three</th>
+                        <th>Workflow Four</th>
+                        <th>Workflow Five</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                </thead>
+                {% for i in skills_data %}
+                <tbody>
+                </tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.language}}</td>
+                        <td>{{i.workflow}}</td>
+                        <td>{{i.wfone}}</td>
+                        <td>{{i.wftwo}}</td>
+                        <td>{{i.wfthree}}</td>
+                        <td>{{i.wffour}}</td>
+                        <td>{{i.wffive}}</td>
+                        <td>
+                            <button class="edit-button"  ><a href="{% url 'edit_skills' i.id %}" target="_blank">Edit</a></button>
+                            <button class="delete-button" ><a href="{% url 'delete_skills' i.id %}">Delete</a></button>   
+                        </td>
+                {% endfor %}    
+                    </tr>
+
+                </tbody>
+            </table>
+    </div>
+</div>
+<!-- Card Html Code Started-->
+
+
+<!-- Card Html Code Started-->
+<div class="card">
+    <div class="card-header">
+        <h2 style="text-align: center;">Interest Data Table</h2>
+        <p style="text-align: center;">All Information Provides This Pannel</p>
+    </div>
+    <div class="card-body">
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Interest</th>
+                        <th>Others Interest</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                </thead>
+                {% for i in interest_data %}
+                <tbody>
+                </tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.interest}}</td>
+                        <td>{{i.othersinterest}}</td>
+                        <td>
+                            <button class="edit-button"  ><a href="{% url 'edit_interest' i.id %}" target="_blank">Edit</a></button>
+                            <button class="delete-button" ><a href="{% url 'delete_interest' i.id %}">Delete</a></button>   
+                        </td>
+                {% endfor %}    
+                    </tr>
+
+                </tbody>
+            </table>
+    </div>
+</div>
+<!-- Card Html Code Started-->
+
+
+<!-- Card Html Code Started-->
+<div class="card">
+    <div class="card-header">
+        <h2 style="text-align: center;">Awards Data Table</h2>
+        <p style="text-align: center;">All Information Provides This Pannel</p>
+    </div>
+    <div class="card-body">
+
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Awards</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                </thead>
+                {% for i in awards_data %}
+                <tbody>
+                </tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.awards}}</td>
+                        <td>
+                            <button class="edit-button"  ><a href="{% url 'edit_awards' i.id %}" target="_blank">Edit</a></button>
+                            <button class="delete-button" ><a href="{% url 'delete_awards' i.id %}">Delete</a></button>   
+                        </td>
+                {% endfor %}    
+                    </tr>
+
+                </tbody>
+            </table>
+    </div>
+</div>
+<!-- Card Html Code Started-->
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'assets/js/scripts.js' %}"></script>
+    </body>
+</html>
