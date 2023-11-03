@@ -306,6 +306,18 @@ def user_skills(request):
 def insert_skills(request):
     if request.method == 'POST':
         language = request.POST.get('language')
+        licon = request.FILES.get('licon')
+        licon1 = request.FILES.get('licon1')
+        licon2 = request.FILES.get('licon2')
+        licon3 = request.FILES.get('licon3')
+        licon4 = request.FILES.get('licon4')
+        licon5 = request.FILES.get('licon5')
+        licon6 = request.FILES.get('licon6')
+        licon7 = request.FILES.get('licon7')
+        licon8 = request.FILES.get('licon8')
+        licon9 = request.FILES.get('licon9')
+        licon10 = request.FILES.get('licon10')
+        licon11 = request.FILES.get('licon11')
         workflow = request.POST.get('workflow')
         wfone = request.POST.get('wfone')
         wftwo = request.POST.get('wftwo')
@@ -317,6 +329,18 @@ def insert_skills(request):
             
             skills_obj = SkillsData()
             skills_obj.language = language
+            skills_obj.licon = licon
+            skills_obj.licon1 = licon1
+            skills_obj.licon2 = licon2
+            skills_obj.licon3 = licon3
+            skills_obj.licon4 = licon4
+            skills_obj.licon5 = licon5
+            skills_obj.licon6 = licon6
+            skills_obj.licon7 = licon7
+            skills_obj.licon8 = licon8
+            skills_obj.licon9 = licon9
+            skills_obj.licon10 = licon10
+            skills_obj.licon11 = licon11
             skills_obj.workflow = workflow
             skills_obj.wfone = wfone
             skills_obj.wftwo = wftwo
@@ -348,7 +372,81 @@ def update_skills(request):
     wffive = request.POST.get('wffive')  
 
     skills_obj = get_object_or_404(SkillsData, id=id)
+    
+    
     skills_obj.language = language
+    if 'licon' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon:
+                os.remove(skills_obj.licon.path)
+            skills_obj.licon = request.FILES['licon']
+            
+    if 'licon1' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon1:
+                os.remove(skills_obj.licon1.path)
+            skills_obj.licon1 = request.FILES['licon1']
+            
+    if 'licon2' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon2:
+                os.remove(skills_obj.licon2.path)
+            skills_obj.licon2 = request.FILES['licon2']
+            
+    if 'licon3' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon3:
+                os.remove(skills_obj.licon3.path)
+            skills_obj.licon3 = request.FILES['licon3']
+            
+    if 'licon4' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon4:
+                os.remove(skills_obj.licon4.path)
+            skills_obj.licon4 = request.FILES['licon4']
+            
+    if 'licon5' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon5:
+                os.remove(skills_obj.licon5.path)
+            skills_obj.licon5 = request.FILES['licon5']
+    
+    if 'licon6' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon6:
+                os.remove(skills_obj.licon6.path)
+            skills_obj.licon6 = request.FILES['licon6']
+            
+    if 'licon7' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon7:
+                os.remove(skills_obj.licon7.path)
+            skills_obj.licon7 = request.FILES['licon7']
+            
+    if 'licon8' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon8:
+                os.remove(skills_obj.licon8.path)
+            skills_obj.licon8 = request.FILES['licon8']
+            
+    if 'licon2' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon9:
+                os.remove(skills_obj.licon9.path)
+            skills_obj.licon9 = request.FILES['licon9']
+            
+    if 'licon10' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon10:
+                os.remove(skills_obj.licon10.path)
+            skills_obj.licon10 = request.FILES['licon10']
+            
+    if 'licon11' in request.FILES:
+            # If a new image is provided, delete the old one if it exists
+            if skills_obj.licon11:
+                os.remove(skills_obj.licon11.path)
+            skills_obj.licon11 = request.FILES['licon11']
+            
     skills_obj.workflow = workflow
     skills_obj.wfone = wfone
     skills_obj.wftwo = wftwo
@@ -356,7 +454,6 @@ def update_skills(request):
     skills_obj.wffour = wffour
     skills_obj.wffive = wffive
     skills_obj.save()
-    
     return redirect('user_user')
     
 def delete_skills(request, id):

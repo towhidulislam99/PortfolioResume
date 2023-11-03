@@ -35,6 +35,18 @@ class EducationData(models.Model):
 
 class SkillsData(models.Model):
     language = models.CharField(max_length=500)
+    licon = models.ImageField(upload_to='images/', default='No images')
+    licon1 = models.ImageField(upload_to='images/', default='No images')
+    licon2 = models.ImageField(upload_to='images/', default='No images')
+    licon3 = models.ImageField(upload_to='images/', default='No images')
+    licon4 = models.ImageField(upload_to='images/', default='No images')
+    licon5 = models.ImageField(upload_to='images/', default='No images')
+    licon6 = models.ImageField(upload_to='images/', default='No images')
+    licon7 = models.ImageField(upload_to='images/', default='No images')
+    licon8 = models.ImageField(upload_to='images/', default='No images')
+    licon9 = models.ImageField(upload_to='images/', default='No images')
+    licon10 = models.ImageField(upload_to='images/', default='No images')
+    licon11 = models.ImageField(upload_to='images/', default='No images')
     workflow = models.CharField(max_length=500)
     wfone = models.CharField(max_length=500)
     wftwo = models.CharField(max_length=500)

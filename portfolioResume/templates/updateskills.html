@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Resume - Salman Md Sultan</title>
+        <title>Resume - Md. Towhidul Islam</title>
         <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}"/>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -48,31 +48,116 @@
             <div class="card-body">
                
                 <div class="container">
-                    <form action="{% url 'update_skills' %}" method="POST">
+                    <form action="{% url 'update_skills' %}" method="POST" enctype="multipart/form-data">
                      {% csrf_token %} 
 
                         <input type="hidden" name="id" value="{{skills_data.id}}" id=""><br><br>
 
                         <label for="language">Programming Language and Tools Name</label>
-                        <input type="text" class="language" id="language" name="language" value="{{skills_data.language}}" required>
+                        <input type="text" class="language" id="language" name="language" value="{{skills_data.language}}" >
+
+                        {% if skills_data.licon %}
+                            <img src="{{ skills_data.licon.url }}" alt="{{ skills_data.licon.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon">Upload Image</label>
+                        <input type="file" name="licon" class="licon" id="licon"><br><br>
+
+                        {% if skills_data.licon1 %}
+                            <img src="{{ skills_data.licon1.url }}" alt="{{ skills_data.licon1.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon1">Upload Image</label>
+                        <input type="file" name="licon1" class="licon1" id="licon1"><br><br>
+
+                        {% if skills_data.licon2 %}
+                            <img src="{{ skills_data.licon2.url }}" alt="{{ skills_data.licon2.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon2">Upload Image</label>
+                        <input type="file" name="licon2" class="licon2" id="licon2"><br><br>
+
+
+                        {% if skills_data.licon3 %}
+                            <img src="{{ skills_data.licon3.url }}" alt="{{ skills_data.licon3.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon3">Upload Image</label>
+                        <input type="file" name="licon3" class="licon3" id="licon3"><br><br>
+
+                        {% if skills_data.licon4 %}
+                            <img src="{{ skills_data.licon4.url }}" alt="{{ skills_data.licon4.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon4">Upload Image</label>
+                        <input type="file" name="licon4" class="licon4" id="licon4"><br><br>
+
+                        {% if skills_data.licon5 %}
+                            <img src="{{ skills_data.licon5.url }}" alt="{{ skills_data.licon5.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon5">Upload Image</label>
+                        <input type="file" name="licon5" class="licon5" id="licon5"><br><br>
+
+                        {% if skills_data.licon6 %}
+                            <img src="{{ skills_data.licon6.url }}" alt="{{ skills_data.licon6.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon6">Upload Image</label>
+                        <input type="file" name="licon6" class="licon6" id="licon6"><br><br>
+
+                        {% if skills_data.licon7 %}
+                            <img src="{{ skills_data.licon7.url }}" alt="{{ skills_data.licon7.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon7">Upload Image</label>
+                        <input type="file" name="licon7" class="licon" id="licon7"><br><br>
+
+                        {% if skills_data.licon8 %}
+                            <img src="{{ skills_data.licon8.url }}" alt="{{ skills_data.licon8.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon8">Upload Image</label>
+                        <input type="file" name="licon8" class="licon8" id="licon8"><br><br>
+
+                        {% if skills_data.licon9 %}
+                            <img src="{{ skills_data.licon9.url }}" alt="{{ skills_data.licon9.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon9">Upload Image</label>
+                        <input type="file" name="licon9" class="licon9" id="licon9"><br><br>
+
+                        {% if skills_data.licon10 %}
+                            <img src="{{ skills_data.licon10.url }}" alt="{{ skills_data.licon10.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon10">Upload Image</label>
+                        <input type="file" name="licon10" class="licon10" id="licon10"><br><br>
+
+                        {% if skills_data.licon11 %}
+                            <img src="{{ skills_data.licon11.url }}" alt="{{ skills_data.licon11.name }}" style="height: 100px; width: 100px;"><br>
+                        {% endif %}
+
+                        <label for="licon11">Upload Image</label>
+                        <input type="file" name="licon11" class="licon11" id="licon11"><br><br>
 
                         <label for="workflow">WorkFlow Heading</label>
-                        <input type="text" class="workflow" id="workflow" name="workflow" value="{{skills_data.workflow}}" required>
+                        <input type="text" class="workflow" id="workflow" name="workflow" value="{{skills_data.workflow}}" >
 
                         <label for="wfone">Work Flow One</label>
-                        <input type="text" class="wfone" id="wfone" name="wfone" value="{{skills_data.wfone}}" required>
+                        <input type="text" class="wfone" id="wfone" name="wfone" value="{{skills_data.wfone}}" >
 
                         <label for="wftwo">Work Flow Two</label>
-                        <input type="text" class="wftwo" id="wwftwo" name="wftwo" value="{{skills_data.wftwo}}" required>
+                        <input type="text" class="wftwo" id="wwftwo" name="wftwo" value="{{skills_data.wftwo}}" >
 
                         <label for="wfthree">Work Flow Three</label>
-                        <input type="text" class="wfthree" id="wfthree" name="wfthree" value="{{skills_data.wfthree}}" required>
+                        <input type="text" class="wfthree" id="wfthree" name="wfthree" value="{{skills_data.wfthree}}" >
 
                         <label for="wffour">Work Flow Four</label>
-                        <input type="text" class="wffour" id="wffour" name="wffour" value="{{skills_data.wffour}}" required>
+                        <input type="text" class="wffour" id="wffour" name="wffour" value="{{skills_data.wffour}}" >
 
                         <label for="wffive">Work Flow Five</label>
-                        <input type="text" class="wffive" id="wffive" name="wffive" value="{{skills_data.wffive}}" required>  
+                        <input type="text" class="wffive" id="wffive" name="wffive" value="{{skills_data.wffive}}" >  
 
                         <input type="submit" class="" value="Update Skills Data" name="">
                     </form>
